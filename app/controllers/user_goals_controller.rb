@@ -3,6 +3,7 @@ class UserGoalsController < ApplicationController
 
   def index
     @goals = current_user.goals
+    @goals_in_list = current_user.goal_in_lists
   end
 
   # Move to another controller

@@ -14,4 +14,7 @@
 
 = render partial: 'shared/share_buttons'
 
-= link_to 'Add to own list', '#'
+- if current_user.goal_list.is_pending?(@goal)
+  Goal already in #{link_to "your goal list", user_goals_url}
+- else
+  = link_to 'Add to own list', add_to_goal_list_path(@goal), method: :put

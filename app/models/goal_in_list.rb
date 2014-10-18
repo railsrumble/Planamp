@@ -4,6 +4,8 @@ class GoalInList < ActiveRecord::Base
   belongs_to :goal
   belongs_to :goal_list
 
+  delegate :title, to: :goal
+
   aasm do
     state :pending, initial: true
     state :done

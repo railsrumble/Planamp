@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :goals, only: [:show, :create, :new]
 
   put 'user_goals/:id/share' => 'user_goals#share', as: :share_goal
+  put 'goals_in_list/:id/add_to_list' => 'goals_in_list#add_goal_to_list', as: :add_to_goal_list
+  put 'goals_in_list/:id/done' => 'goals_in_list#done', as: :done_goal
+  put 'goals_in_list/:id/fail' => 'goals_in_list#fail', as: :fail_goal
 
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   root to: 'main#index'

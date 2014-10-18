@@ -18,4 +18,9 @@ class GoalList < ActiveRecord::Base
       return false
     end
   end
+
+  def is_pending?(goal)
+    goal_in_list = goal_in_lists.where(goal_id: goal.id).first
+    goal_in_list && goal_in_list.pending?
+  end
 end

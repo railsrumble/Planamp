@@ -14,7 +14,7 @@
 
   %body{class: "#{content_for?(:body_class) ? content_for(:body_class) : ''}"}
 
-    %h1.main-title= link_to "Planamp - Goal Motivation App"
+    %h1.main-title= link_to "Planamp - Goal Motivation App", categories_path
 
     .menu= render partial: 'shared/menu'
 

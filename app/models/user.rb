@@ -8,6 +8,11 @@ class User < ActiveRecord::Base
   has_many :goals    # Goals which created by user
   has_one :goal_list # Goals to be done
 
+  delegate :goal_in_lists, to: :goal_list
+
+  def goal_list
+    super || build_goal_list.save!
+  end
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
