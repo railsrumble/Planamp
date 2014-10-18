@@ -2,7 +2,7 @@
 
 - @category_with_goals.each do |category|
   %h4= category.name
-  - category.goals.each do |goal|
+  - category.goals.available_for_all.each do |goal|
     %h5 Title #{goal.title}
     %p
       Created by

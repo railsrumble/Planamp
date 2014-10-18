@@ -4,4 +4,6 @@ class Goal < ActiveRecord::Base
 
   validates :title, :user, :category, presence: true
   delegate :name, to: :user, prefix: true
+
+  scope :available_for_all, -> { where(shared: true).where(approved: true) }
 end
