@@ -1,10 +1,17 @@
 !!!
 %html
   %head
-    %title Planamp - Motivations for Your Goals
+    %title= content_for?(:title) ? content_for(:title) : "Planamp - Motivations for Your Goals"
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
+
+    :javascript
+      var switchTo5x=true;
+    %script{:src => "http://w.sharethis.com/button/buttons.js", :type => "text/javascript"}
+    :javascript
+      stLight.options({publisher: "d9e3b58a-eb41-43f1-b570-aef8ebe91ac5", doNotHash: false, doNotCopy: false, hashAddressBar: true});
+
   %body
     = render partial: 'shared/messages'
     = render partial: 'shared/menu'
