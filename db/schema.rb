@@ -11,10 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141018050002) do
+ActiveRecord::Schema.define(version: 20141018052046) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.integer  "weight"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "categories", ["weight"], name: "index_categories_on_weight", using: :btree
+
+  create_table "goals", force: true do |t|
+    t.string   "title",                      null: false
+    t.text     "description"
+    t.integer  "category_id",                null: false
+    t.integer  "user_id",                    null: false
+    t.boolean  "approved",    default: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "goals", ["approved"], name: "index_goals_on_approved", using: :btree
+  add_index "goals", ["category_id"], name: "index_goals_on_category_id", using: :btree
+  add_index "goals", ["user_id"], name: "index_goals_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
