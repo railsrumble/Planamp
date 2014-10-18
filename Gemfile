@@ -33,6 +33,9 @@ gem 'rails_12factor'
 gem 'unicorn'
 
 gem 'devise'
+gem 'omniauth-github'
+gem 'omniauth-twitter'
+
 gem 'simple_form'
 
 
