@@ -15,4 +15,8 @@ class Goal < ActiveRecord::Base
     not_empty_attrs = Hash[attrs.find_all{|k,v| (v[:source] + v[:title]).present?}]
     super(not_empty_attrs)
   end
+
+  def share!
+    update_attribute(:shared, true)
+  end
 end

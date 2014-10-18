@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  resources :user_goals, only: [:index]
   resources :goals
+
+  put 'user_goals/:id/share' => 'user_goals#share', as: :share_goal
 
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   root to: 'main#index'

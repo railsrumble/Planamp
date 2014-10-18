@@ -1,0 +1,13 @@
+%h1 Your goals
+
+%h2 Created by you
+- @goals.each do |goal|
+  %p
+    %b Title
+    = link_to goal.title, goal
+  %p
+    %b Sharing:
+    - if goal.shared?
+      %b Shared for everyone
+    - else
+      = link_to 'Share for everyone!', share_goal_path(goal), method: :put, confirm: true

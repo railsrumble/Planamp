@@ -5,6 +5,11 @@
   = link_to "Sign in with Github", user_omniauth_authorize_path(:github, origin: request.original_url)
   = link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter, origin: request.original_url)
 
-= link_to "New goal", new_goal_path
+- if current_user && current_user.admin?
+  = link_to "New goal", new_goal_path
+- else
+  = link_to "Make your own goal", new_goal_path
+  = link_to "Your goals", user_goals_path
+
 = link_to "All goals", goals_path
 
