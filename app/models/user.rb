@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
          :trackable, :validatable
   devise :omniauthable, omniauth_providers: [:github, :twitter]
 
-  has_many :goals
+  has_many :goals    # Goals which created by user
+  has_one :goal_list # Goals to be done
 
 
   def self.from_omniauth(auth)

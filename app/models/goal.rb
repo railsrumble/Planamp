@@ -1,7 +1,10 @@
 class Goal < ActiveRecord::Base
   belongs_to :category
   belongs_to :user
+
   has_many :motivations
+  has_many :goal_in_lists
+  has_many :goal_lists, through: :goal_in_lists
 
   accepts_nested_attributes_for :motivations
 
