@@ -8,7 +8,7 @@ class GoalsController < ApplicationController
   def new
     @goal = Goal.new
     #TODO: It should be dynamically
-    motivations_count = params[:motivations_count] || 3
+    motivations_count = 5
     motivations_count.times{ @goal.motivations.build }
   end
 

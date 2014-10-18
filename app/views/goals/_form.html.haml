@@ -1,13 +1,14 @@
 = simple_form_for @goal do |f|
   = f.association :category, include_blank: false
-  = f.input :title
-  = f.input :description
+  = f.input :title, input_html: { size: 50 }
+  = f.input :description, input_html: { rows: 7, cols: 37 }
 
   = f.simple_fields_for :motivations do |m|
     %p ----------------------------------------------------
-    = m.input :title, label: 'Motivation title'
-    = m.input :description, label: 'Motivation description'
-    = m.input :source, label: 'Motivation source'
+    = m.input :title, required: false, label: 'Motivation title', input_html: { size: 50 }
+    = m.input :description, required: false, label: 'Motivation description', |
+    input_html: { rows: 7, cols: 37 }
+    = m.input :source, required: false, label: 'Motivation source', input_html: { size: 50 }
     %p ----------------------------------------------------
 
   = f.button :submit
