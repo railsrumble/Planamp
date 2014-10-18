@@ -2,7 +2,7 @@ class GoalsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @category_with_goals = Category.weighted.includes(:goals)
+    @category_with_goals = Category.weighted.includes(:available_goals)
   end
 
   def new
