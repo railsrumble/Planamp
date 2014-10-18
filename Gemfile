@@ -39,8 +39,10 @@ gem 'omniauth-twitter'
 gem 'simple_form'
 
 gem 'honeybadger'
+gem 'newrelic_rpm'
 
 gem 'aasm'
+
 
 
 # Use ActiveModel has_secure_password
