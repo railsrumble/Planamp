@@ -33,6 +33,7 @@ gem 'rails_12factor'
 gem 'unicorn'
 
 gem 'devise'
+gem 'simple_form'
 
 
 # Use ActiveModel has_secure_password
