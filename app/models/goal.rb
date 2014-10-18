@@ -5,10 +5,13 @@ class Goal < ActiveRecord::Base
 
   accepts_nested_attributes_for :motivations
 
-  validates :title, :user, :category, presence: true
+  validates :title, :user, :category, :motivations, presence: true
   delegate :name, to: :user, prefix: true
 
   scope :available_for_all, -> { where(shared: true).where(approved: true) }
+
+  delegate :name, to: :category, prefix: true
+  delegate :name, to: :user, prefix: true
 
 
   def motivations_attributes=(attrs)

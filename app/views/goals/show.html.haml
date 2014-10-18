@@ -1,22 +1,17 @@
 = page_title("Planamp - #{@goal.title}")
 
-%h1 GoalsController#show
+%h1.goal-title= @goal.title
+%h3.goal-category= link_to @goal.category_name, @goal.category
+
+%h4.goal-creator Created by #{link_to @goal.user_name, '#'}
+
+%p.goal-description= @goal.description
+
+= link_to 'Motivations (should be as dialog)', '#', class: 'motivations-dialog-link'
+%br
+.motivations{style: 'display:none'}
+  = render partial: 'motivation', collection: @goal.motivations
 
 = render partial: 'shared/share_buttons'
 
-%p
-  %b Title:
-  #{@goal.title}
-%p
-  %b Created by:
-  #{@goal.user_name}
-
-%br
-
-%h3 Motivations
-- @goal.motivations.each do |motivation|
-  %p <b>Title:</b> #{motivation.title}
-  %p <b>Description:</b> #{motivation.description}
-  %p <b>Source:</b> #{motivation.source}
-  %p ----------------------------------------------------
-  %br
+= link_to 'Add to own list', '#'

@@ -1,0 +1,4 @@
+%ul.categories
+  - @categories.each do |category|
+    %li= link_to category.name, category
+  %li= link_to @shared_category.name, @shared_category

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  resources :categories, only: [:index, :show]
   resources :user_goals, only: [:index]
-  resources :goals
+  resources :goals, only: [:show, :create, :new]
 
   put 'user_goals/:id/share' => 'user_goals#share', as: :share_goal
 

@@ -2,8 +2,8 @@
 %html
   %head
     %title= content_for?(:title) ? content_for(:title) : "Planamp - Motivations for Your Goals"
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
     = csrf_meta_tags
 
     :javascript
@@ -12,8 +12,12 @@
     :javascript
       stLight.options({publisher: "d9e3b58a-eb41-43f1-b570-aef8ebe91ac5", doNotHash: false, doNotCopy: false, hashAddressBar: true});
 
-  %body
+  %body{class: "#{content_for?(:body_class) ? content_for(:body_class) : ''}"}
+
+    %h1.main-title= link_to "Planamp - Goal Motivation App"
+
+    .menu= render partial: 'shared/menu'
+
     = render partial: 'shared/messages'
-    = render partial: 'shared/menu'
 
     = yield
