@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
          :trackable, :validatable
 
   has_many :goals
+
 end

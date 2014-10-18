@@ -15,7 +15,13 @@ class GoalsController < ApplicationController
   def create
     @goal = Goal.new(goal_params)
     @goal.user_id = current_user.id
-    @goal.shared = true #NOTE: This line only for admin
+
+    if current_user.admin?
+      @goal.shared = true #NOTE: This line only for admin
+    else
+      @goal.category = Category.shared
+    end
+
     if @goal.save
       redirect_to @goal, success: "Goal successfully created!"
     else
