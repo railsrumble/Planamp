@@ -1,10 +1,14 @@
 %h1 GoalsController#index
+= render partial: 'admin_menu'
 
 - @category_with_goals.each do |category|
-  %h4= category.name
+  %h2 <b>Category:</b> #{category.name}
   - category.available_goals.each do |goal|
-    %h5 Title #{goal.title}
     %p
-      Created by
-      %b #{goal.user_name}
+      %b Title
+      #{link_to goal.title, goal}
+    %p
+      %b Created by
+      #{goal.user_name}
+  %p ------------------------------------------
 

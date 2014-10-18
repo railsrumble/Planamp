@@ -1,4 +1,18 @@
-%h5 Title: #{@goal.title}
+%h1 GoalsController#show
+
+= render partial: 'admin_menu'
+
 %p
-  Created by
-  %b #{@goal.user_name || @goal.user.id}
+  %b Title:
+  #{@goal.title}
+%p
+  %b Created by:
+  #{@goal.user_name}
+
+%br
+
+%h3 Motivations
+- @goal.motivations.each do |motivation|
+  %p <b>Title:</b> #{motivation.title}
+  %p <b>Description:</b> #{motivation.description}
+  %p <b>Source:</b> #{motivation.source}
