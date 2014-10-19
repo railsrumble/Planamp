@@ -1,8 +1,5 @@
-%ul.categories
+%div.b-categories
+  %h2.b-categories__title Сategory
   - @categories.each do |category|
-    %li
-      =link_to category.name, category
-      %span.count= category.goals_count
-  %li
-    = link_to @shared_category.name, @shared_category
-    %span.count= @shared_category.goals_count
+    =link_to "#{category.name} <span>#{category.goals_count}</span>".html_safe, category, class: 'b-categories__item b-categories__item_' + category.name.downcase
+  = link_to "#{@shared_category.name} <span>#{@shared_category.goals_count}</span>".html_safe, @shared_category, class: 'b-categories__item b-categories__item_shared'

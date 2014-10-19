@@ -84,42 +84,87 @@ h1 {
   font-weight: normal;
   height: 33.6px;
   line-height: 33.6px;
-  padding-bottom: 13.33333333px;
+  padding-bottom: 26.66666667px;
 }
 h2 {
   font-size: 28px;
   font-weight: normal;
   height: 28px;
   line-height: 28px;
-  padding-bottom: 13.33333333px;
+  padding-bottom: 26.66666667px;
 }
 h3 {
   font-size: 24.5px;
   font-weight: normal;
   height: 24.5px;
   line-height: 24.5px;
-  padding-bottom: 13.33333333px;
+  padding-bottom: 26.66666667px;
 }
 h4 {
   font-size: 19.6px;
   font-weight: normal;
   height: 19.6px;
   line-height: 19.6px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 h5 {
   font-size: 18.2px;
   font-weight: normal;
   height: 18.2px;
   line-height: 18.2px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 h6 {
   font-size: 14px;
   font-weight: bold;
   height: 14px;
   line-height: 14px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
+}
+.b-category:after {
+  clear: both;
+  display: block;
+  content: "";
+}
+.b-categories__item {
+  float: left;
+  width: 200px;
+  text-align: center;
+  background: 50% 20px no-repeat;
+  padding: 165px 10px 30px;
+  font-size: 21px;
+  font-family: "Roboto", serif;
+  font-weight: normal;
+  position: relative;
+  text-decoration: none;
+  color: #000;
+}
+.b-categories__item:hover {
+  background-color: #f5f5f5;
+  text-decoration: none;
+  color: #000;
+}
+.b-categories__item span {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 2px 8px;
+  display: block;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 14px;
+}
+.b-categories__item_food {
+  background-image: url(../img/b-categories__item_food.png);
+}
+.b-categories__item_sport {
+  background-image: url(../img/b-categories__item_sport.png);
+}
+.b-categories__item_personal {
+  background-image: url(../img/b-categories__item_personal.png);
+}
+.b-categories__item_shared {
+  background-image: url(../img/b-categories__item_shared.png);
 }
 .b-content {
   position: relative;
@@ -128,7 +173,7 @@ h6 {
 }
 .b-content .b-wrapper {
   background: #fff;
-  padding: 20px;
+  padding: 33.33333333px 40px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
