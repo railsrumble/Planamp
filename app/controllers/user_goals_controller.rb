@@ -4,6 +4,7 @@ class UserGoalsController < ApplicationController
   def index
     @goals = current_user.goals
     @goals_in_list = current_user.grouped_goals_in_list
+    @empty_goals_in_list = current_user.goal_in_lists.blank?
   end
 
   # Move to another controller
