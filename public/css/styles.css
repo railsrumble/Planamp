@@ -120,191 +120,20 @@ h6 {
   line-height: 14px;
   padding-bottom: 20px;
 }
-.b-categories {
-  margin-bottom: 50px;
-}
-.b-categories:after {
-  clear: both;
-  display: block;
-  content: "";
-}
-.b-categories__item {
-  float: left;
-  width: 200px;
-  text-align: center;
-  background: 50% 20px no-repeat;
-  padding: 165px 10px 20px;
-  font-size: 17.5px;
-  font-family: "Roboto", serif;
-  font-weight: normal;
+.b-content {
   position: relative;
-  text-decoration: none;
-  color: #000;
+  min-height: 400px;
+  padding-top: 80px;
+  padding-bottom: 60px;
 }
-.b-categories__item:hover {
-  background-color: #f5f5f5;
-  text-decoration: none;
-  color: #000;
-}
-.b-categories__item span {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  padding: 2px 8px;
-  display: block;
-  background: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  font-size: 14px;
-}
-.b-categories__item_food {
-  background-image: url(../img/b-categories__item_food.png);
-}
-.b-categories__item_sport {
-  background-image: url(../img/b-categories__item_sport.png);
-}
-.b-categories__item_personal {
-  background-image: url(../img/b-categories__item_personal.png);
-}
-.b-categories__item_shared {
-  background-image: url(../img/b-categories__item_shared.png);
-}
-.b-categories__title-link {
-  float: right;
-  font-size: 16px;
-}
-span.b-categories__title-link {
-  color: #888;
-}
-span.b-categories__title-link b {
-  color: #000;
-  font-weight: 500;
-}
-.b-categories__goals {
-  border-top: 1px solid #eee;
-  margin-bottom: 50px;
-}
-.b-categories__goals:after {
-  clear: both;
-  display: block;
-  content: "";
-}
-.b-categories__goals-item {
-  border: 1px solid #eee;
-  border-top: none;
-  display: block;
-  padding: 10px 10px 10px 52px;
-  text-decoration: none;
-  background: url(../img/b-categories__goals-item.png) 10px 13px no-repeat;
-}
-.b-categories__goals-item:hover {
-  background-color: #f5f5f5;
-}
-.b-categories__goals-item:after {
-  clear: both;
-  display: block;
-  content: "";
-}
-.b-categories__goals-item-btn {
-  float: right;
-  padding: 0 10px;
-}
-.b-categories__goals-item_your {
-  border: 1px solid #eee;
-  border-top: none;
-  display: block;
-  padding: 0px 0px 0px 42px;
-  text-decoration: none;
-  background: url(../img/b-categories__goals-item.png) 4px 3px no-repeat;
-}
-.b-categories__goals-item_your .b-categories__goals-item-title {
-  float: left;
-  width: 550px;
-}
-.b-categories__goals-item-btn {
-  float: right;
-  padding: 10px;
-  color: #fff;
-  text-decoration: none;
-  font-family: "Roboto", serif;
-}
-.b-categories__goals-item-btn:hover {
-  color: #fff;
-}
-.b-categories__goals-item-btn_info {
-  background-color: #5bc0de;
-}
-.b-categories__goals-item-btn_info:hover {
-  background-color: #31b0d5;
-}
-.b-categories__goals-item-btn_fail {
-  background-color: #d9534f;
-}
-.b-categories__goals-item-btn_fail:hover {
-  background-color: #c9302c;
-}
-.b-categories__goals-item-btn_done {
-  background-color: #5cb85c;
-}
-.b-categories__goals-item-btn_done:hover {
-  background-color: #449d44;
-}
-.b-categories__goals-item-title {
-  display: block;
-  color: #000;
-  font-size: 16px;
-  font-family: "Roboto", serif;
-  text-decoration: none;
-  padding: 10px 0;
-}
-.b-categories__goals-item-title:hover {
-  color: #000;
-}
-.b-categories__goals-item-desc {
-  display: block;
-  color: #999;
-}
-.b-categories__creator {
-  padding-bottom: 10px;
-  padding-top: 12px;
-  font-size: 12px;
-  text-align: right;
-  display: none;
-}
-.b-categories__social {
-  float: right;
-}
-.b-categories__add-own-list {
-  height: 32px;
-  line-height: 32px;
-  float: left;
-  padding-left: 40px;
-  background: url(../img/b-categories__add-own-list.png) 0 50% no-repeat;
-}
-.b-categories__motivations-link {
-  height: 32px;
-  line-height: 32px;
-  display: block;
-  padding-left: 40px;
-  margin-bottom: 10px;
-  background: url(../img/b-categories__motivation.png) 0 50% no-repeat;
-}
-.b-categories__motivations {
-  padding: 10px 0;
-}
-.b-categories__motivations-item {
-  padding-bottom: 15px;
-  border-bottom: 1px dashed #999;
-  margin-bottom: 15px;
-}
-.b-categories__motivations-item-title {
-  font-size: 18.2px;
-  font-weight: normal;
-  height: 18.2px;
-  line-height: 18.2px;
-  padding-bottom: 5px;
-}
-.b-categories__motivations-item-description {
-  padding-bottom: 5px;
+.b-content .b-wrapper {
+  background: #fff;
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  padding: 33.33333333px 40px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 .b-header {
   width: 100%;
@@ -364,24 +193,231 @@ span.b-categories__title-link b {
 .b-header__menu-item_yourgoals {
   background-image: url(../img/b-header__menu-item_yourgoals.png);
 }
-.b-content {
-  position: relative;
-  min-height: 400px;
-  padding-top: 80px;
-  padding-bottom: 60px;
-}
-.b-content .b-wrapper {
-  background: #fff;
-  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-  padding: 33.33333333px 40px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
 .b-page {
   background-color: #f9f9f9;
   height: 100%;
+}
+.b-categories {
+  margin-bottom: 50px;
+}
+.b-categories:after {
+  clear: both;
+  display: block;
+  content: "";
+}
+.b-categories__item {
+  float: left;
+  width: 200px;
+  text-align: center;
+  background: 50% 20px no-repeat;
+  padding: 165px 10px 20px;
+  font-size: 17.5px;
+  font-family: "Roboto", serif;
+  font-weight: normal;
+  position: relative;
+  text-decoration: none;
+  color: #000;
+}
+.b-categories__item:hover {
+  background-color: #f5f5f5;
+  text-decoration: none;
+  color: #000;
+}
+.b-categories__item span {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 2px 8px;
+  display: block;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 14px;
+}
+.b-categories__item_food {
+  background-image: url(../img/b-categories__item_food.png);
+}
+.b-categories__item_sport {
+  background-image: url(../img/b-categories__item_sport.png);
+}
+.b-categories__item_personal {
+  background-image: url(../img/b-categories__item_personal.png);
+}
+.b-categories__item_shared {
+  background-image: url(../img/b-categories__item_shared.png);
+}
+.b-categories__title-link {
+  float: right;
+  font-size: 16px;
+}
+.b-categories__goals {
+  border-top: 1px solid #eee;
+  margin-bottom: 50px;
+}
+.b-categories__goals:after {
+  clear: both;
+  display: block;
+  content: "";
+}
+.b-categories__goals-item {
+  border: 1px solid #eee;
+  border-top: none;
+  display: block;
+  padding: 10px 10px 10px 52px;
+  text-decoration: none;
+  background: url(../img/b-categories__goals-item.png) 10px 13px no-repeat;
+}
+.b-categories__goals-item:hover {
+  background-color: #f5f5f5;
+}
+.b-categories__goals-item:after {
+  clear: both;
+  display: block;
+  content: "";
+}
+.b-categories__goals-done {
+  border-top: 1px solid #5cb85c;
+  margin: 10px 0;
+}
+.b-categories__goals-done:after {
+  clear: both;
+  display: block;
+  content: "";
+}
+.b-categories__goals-done .b-categories__goals-item {
+  border: 1px solid #5cb85c;
+  border-top: none;
+}
+.b-categories__goals-fail {
+  border-top: 1px solid #d9534f;
+  margin-bottom: 10px 0;
+}
+.b-categories__goals-fail:after {
+  clear: both;
+  display: block;
+  content: "";
+}
+.b-categories__goals-fail .b-categories__goals-item {
+  border: 1px solid #d9534f;
+  border-top: none;
+}
+.b-categories__goals-counter {
+  margin: 15px 0 10px;
+  color: #888;
+  font-size: 16px;
+}
+.b-categories__goals-counter .b-categories__goals-counter-pen {
+  color: #000;
+}
+.b-categories__goals-counter .b-categories__goals-counter-done {
+  color: #5cb85c;
+}
+.b-categories__goals-counter .b-categories__goals-counter-fail {
+  color: #d9534f;
+}
+.b-categories__goals-counter_first {
+  margin-top: -5px;
+}
+.b-categories__goals-item-btn {
+  float: right;
+  padding: 0 10px;
+}
+.b-categories__goals-item_your {
+  border: 1px solid #eee;
+  border-top: none;
+  display: block;
+  padding: 0px 0px 0px 42px;
+  text-decoration: none;
+  background: url(../img/b-categories__goals-item.png) 4px 3px no-repeat;
+}
+.b-categories__goals-item_your .b-categories__goals-item-title {
+  float: left;
+  width: 550px;
+  padding: 10px 0;
+}
+.b-categories__goals-item-btn {
+  float: right;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-family: "Roboto", serif;
+}
+.b-categories__goals-item-btn:hover {
+  color: #fff;
+}
+.b-categories__goals-item-btn_info {
+  background-color: #5bc0de;
+}
+.b-categories__goals-item-btn_info:hover {
+  background-color: #31b0d5;
+}
+.b-categories__goals-item-btn_fail {
+  background-color: #d9534f;
+}
+.b-categories__goals-item-btn_fail:hover {
+  background-color: #c9302c;
+}
+.b-categories__goals-item-btn_done {
+  background-color: #5cb85c;
+}
+.b-categories__goals-item-btn_done:hover {
+  background-color: #449d44;
+}
+.b-categories__goals-item-title {
+  display: block;
+  color: #000;
+  font-size: 16px;
+  font-family: "Roboto", serif;
+  text-decoration: none;
+}
+.b-categories__goals-item-title:hover {
+  color: #000;
+}
+.b-categories__goals-item-desc {
+  display: block;
+  color: #999;
+}
+.b-categories__creator {
+  padding-bottom: 10px;
+  padding-top: 12px;
+  font-size: 12px;
+  text-align: right;
+  display: none;
+}
+.b-categories__social {
+  float: right;
+}
+.b-categories__add-own-list {
+  height: 32px;
+  line-height: 32px;
+  float: left;
+  padding-left: 40px;
+  background: url(../img/b-categories__add-own-list.png) 0 50% no-repeat;
+}
+.b-categories__motivations-link {
+  height: 32px;
+  line-height: 32px;
+  display: block;
+  padding-left: 40px;
+  margin-bottom: 10px;
+  background: url(../img/b-categories__motivation.png) 0 50% no-repeat;
+}
+.b-categories__motivations {
+  padding: 10px 0;
+}
+.b-categories__motivations-item {
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #999;
+  margin-bottom: 15px;
+}
+.b-categories__motivations-item-title {
+  font-size: 18.2px;
+  font-weight: normal;
+  height: 18.2px;
+  line-height: 18.2px;
+  padding-bottom: 5px;
+}
+.b-categories__motivations-item-description {
+  padding-bottom: 5px;
 }
 .b-wrapper {
   width: 960px;

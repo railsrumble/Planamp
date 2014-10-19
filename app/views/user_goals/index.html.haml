@@ -1,5 +1,6 @@
 %div.b-categories
-  %h2.b-categories__title Your goal list <span class="b-categories__title-link">Pending count: <b>#{@goals_in_list['pending'].count}</b></span>
+  %h2.b-categories__title Your goal list
+  %div.b-categories__goals-counter.b-categories__goals-counter_first Pending count: <span class="b-categories__goals-counter-pen">#{@goals_in_list['pending'].count}</span>
   .b-categories__goals
     -#= link_to "View new goals", categories_path
     - if @goals_in_list['pending']
@@ -11,20 +12,21 @@
           = link_to "Done", done_goal_path(goal_in_list), method: :put, class: 'b-categories__goals-item-btn b-categories__goals-item-btn_done';
 
     - if @goals_in_list['done']
-      .done-goals
-        %p Done count: #{@goals_in_list['done'].count}
+      %div.b-categories__goals-counter Done count: <span class="b-categories__goals-counter-done">#{@goals_in_list['done'].count}</span>
+      .b-categories__goals-done
         - @goals_in_list['done'].each do |goal_in_list|
-          %p
-            = link_to goal_in_list.title, goal_in_list.goal
+          %div.b-categories__goals-item.b-categories__goals-item_your
+            = link_to goal_in_list.title, goal_in_list.goal, class: 'b-categories__goals-item-title'
 
     - if @goals_in_list['failed']
-      .failed-goals
-        %p Failed count: #{@goals_in_list['failed'].count}
+      %div.b-categories__goals-counter Failed count: <span class="b-categories__goals-counter-fail">#{@goals_in_list['failed'].count}</span>
+      .b-categories__goals-fail
         - @goals_in_list['failed'].each do |goal_in_list|
-          %p
-            = link_to goal_in_list.title, goal_in_list.goal
+          %div.b-categories__goals-item.b-categories__goals-item_your
+            = link_to goal_in_list.title, goal_in_list.goal, class: 'b-categories__goals-item-title'
 
-  %h2.b-categories__title Created by you <span class="b-categories__title-link">Total count:  <b>#{@goals.count}</b></span>
+  %h2.b-categories__title Created by you
+  %div.b-categories__goals-counter.b-categories__goals-counter_first Total count:  <span class="b-categories__goals-counter-pen">#{@goals.count}</span>
   %div.b-categories__goals
     - @goals.each do |goal|
       %div.b-categories__goals-item
