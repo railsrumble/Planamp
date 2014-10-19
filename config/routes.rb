@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   resources :categories, only: [:index, :show]
   resources :user_goals, only: [:index]
-  resources :goals, only: [:show, :create, :new]
+  
+  resources :goals, only: [:show, :create, :new] do
+    member do
+      get :random_motivation
+    end
+  end
 
   put 'user_goals/:id/share' => 'user_goals#share', as: :share_goal
   put 'goals_in_list/:id/add_to_list' => 'goals_in_list#add_goal_to_list', as: :add_to_goal_list
