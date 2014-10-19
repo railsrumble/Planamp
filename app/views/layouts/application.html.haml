@@ -5,7 +5,7 @@
     = stylesheet_link_tag    '/css/styles', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
-
+    %link{:href => "http://fonts.googleapis.com/css?family=Roboto:300,400,700&subset=latin,cyrillic-ext", :rel => "stylesheet", :type => "text/css"}/
     :javascript
       var switchTo5x=true;
     %script{:src => "http://w.sharethis.com/button/buttons.js", :type => "text/javascript"}
@@ -15,17 +15,11 @@
   %body{class: "#{content_for?(:body_class) ? content_for(:body_class) : ''}"}
     %div.b-header
       %div.b-wrapper.clearfix
-        %div.b-header__name
-          %h1.main-title= link_to "Planamp - Goal Motivation App"
+        %div.b-header__name= link_to "Planamp", categories_path, class: 'b-header__name-link';
+        %div.b-header__menu= render partial: 'shared/menu'
     %div.b-content
       %div.b-wrapper.clearfix
-
-        %h1.main-title= link_to "Planamp - Goal Motivation App", categories_path
-
-        .menu= render partial: 'shared/menu'
-
         = render partial: 'shared/messages'
-
         = yield
 
         = render partial: 'shared/yandex_metrika'
