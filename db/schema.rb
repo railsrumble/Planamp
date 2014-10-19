@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141018110707) do
+ActiveRecord::Schema.define(version: 20141018182608) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,22 @@ ActiveRecord::Schema.define(version: 20141018110707) do
   end
 
   add_index "categories", ["weight"], name: "index_categories_on_weight", using: :btree
+
+  create_table "goal_in_lists", force: true do |t|
+    t.integer  "goal_id"
+    t.integer  "goal_list_id"
+    t.string   "aasm_state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "goal_lists", force: true do |t|
+    t.integer  "user_id",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "goal_lists", ["user_id"], name: "index_goal_lists_on_user_id", using: :btree
 
   create_table "goals", force: true do |t|
     t.string   "title",                       null: false
