@@ -6,6 +6,8 @@ class Category < ActiveRecord::Base
 
   scope :weighted, -> { order('weight asc') }
 
+  delegate :count, to: :goals, prefix: true
+
   def self.shared
     find_by_name("Shared")
   end

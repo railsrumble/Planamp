@@ -1,4 +1,8 @@
 %ul.categories
   - @categories.each do |category|
-    %li= link_to category.name, category
-  %li= link_to @shared_category.name, @shared_category
+    %li
+      =link_to category.name, category
+      %span.count= category.goals_count
+  %li
+    = link_to @shared_category.name, @shared_category
+    %span.count= @shared_category.goals_count
