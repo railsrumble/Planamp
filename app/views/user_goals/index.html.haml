@@ -1,48 +1,35 @@
-%h1 Your goals
-
-.goal-list
-  %h2 Your goal list
-  = link_to "View new goals", categories_path
-
-  - if @goals_in_list['pending']
-    .pending-goals
-      %p Pending count: #{@goals_in_list['pending'].count}
+%div.b-categories
+  %h2.b-categories__title Your goal list <span class="b-categories__title-link">Pending count: <b>#{@goals_in_list['pending'].count}</b></span>
+  .b-categories__goals
+    -#= link_to "View new goals", categories_path
+    - if @goals_in_list['pending']
       - @goals_in_list['pending'].each do |goal_in_list|
-        %p
-          = link_to goal_in_list.title, goal_in_list.goal
-          %span
-            = link_to "Done", done_goal_path(goal_in_list), method: :put
-          %span
-            = link_to "Fail", fail_goal_path(goal_in_list), method: :put
-          %span
-            = link_to "Motivate me!", '#'
+        %div.b-categories__goals-item.b-categories__goals-item_your
+          = link_to goal_in_list.title, goal_in_list.goal, class: 'b-categories__goals-item-title'
+          = link_to "Motivate me!", '#', class: 'b-categories__goals-item-btn b-categories__goals-item-btn_info';
+          = link_to "Fail", fail_goal_path(goal_in_list), method: :put, class: 'b-categories__goals-item-btn b-categories__goals-item-btn_fail';
+          = link_to "Done", done_goal_path(goal_in_list), method: :put, class: 'b-categories__goals-item-btn b-categories__goals-item-btn_done';
 
-  - if @goals_in_list['done']
-    .done-goals
-      %p Done count: #{@goals_in_list['done'].count}
-      - @goals_in_list['done'].each do |goal_in_list|
-        %p
-          = link_to goal_in_list.title, goal_in_list.goal
+    - if @goals_in_list['done']
+      .done-goals
+        %p Done count: #{@goals_in_list['done'].count}
+        - @goals_in_list['done'].each do |goal_in_list|
+          %p
+            = link_to goal_in_list.title, goal_in_list.goal
 
-  - if @goals_in_list['failed']
-    .failed-goals
-      %p Failed count: #{@goals_in_list['failed'].count}
-      - @goals_in_list['failed'].each do |goal_in_list|
-        %p
-          = link_to goal_in_list.title, goal_in_list.goal
+    - if @goals_in_list['failed']
+      .failed-goals
+        %p Failed count: #{@goals_in_list['failed'].count}
+        - @goals_in_list['failed'].each do |goal_in_list|
+          %p
+            = link_to goal_in_list.title, goal_in_list.goal
 
-.own-goals
-  %h2 Created by you
-
-  = link_to "Make new own goal", new_goal_path
-  %br
-
-  %p Total count: #{@goals.count}
-  %ul.own-goals
-  - @goals.each do |goal|
-    %li.own-goal
-      = link_to goal.title, goal
-      - if goal.shared?
-        Shared for everyone!
-      - else
-        = link_to 'Share for everyone!', share_goal_path(goal), method: :put, confirm: true
+  %h2.b-categories__title Created by you <span class="b-categories__title-link">Total count:  <b>#{@goals.count}</b></span>
+  %div.b-categories__goals
+    - @goals.each do |goal|
+      %div.b-categories__goals-item
+        = link_to goal.title, goal, class: 'b-categories__goals-item-title'
+        - if goal.shared?
+          %div.b-categories__goals-item-desc Shared for everyone!
+        - else
+          = link_to 'Share for everyone!', share_goal_path(goal), method: :put, confirm: true
