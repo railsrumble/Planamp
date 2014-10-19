@@ -2,36 +2,47 @@
 
 .goal-list
   %h2 Your goal list
-  - if @goals_in_list.empty?
-    = link_to "Select goals!", categories_path
-  -else
-    %p Pending count: #{@goals_in_list.pending.count}
-    %p Done count: #{@goals_in_list.done.count}
-    %p Failed count: #{@goals_in_list.failed.count}
-    %ul.goal-list
-      - @goals_in_list.each do |goal_in_list|
-        %li
-          - if goal_in_list.pending?
-            = link_to "Done", done_goal_path(goal_in_list), method: :put
-            = link_to "Fail", fail_goal_path(goal_in_list), method: :put
-            = link_to "Motivate me!", '#'
-          - else
-            = goal_in_list.aasm_state
-          %br
+  = link_to "View new goals", categories_path
+
+  - if @goals_in_list['pending']
+    .pending-goals
+      %p Pending count: #{@goals_in_list['pending'].count}
+      - @goals_in_list['pending'].each do |goal_in_list|
+        %p
           = link_to goal_in_list.title, goal_in_list.goal
-          %br
+          %span
+            = link_to "Done", done_goal_path(goal_in_list), method: :put
+          %span
+            = link_to "Fail", fail_goal_path(goal_in_list), method: :put
+          %span
+            = link_to "Motivate me!", '#'
+
+  - if @goals_in_list['done']
+    .done-goals
+      %p Done count: #{@goals_in_list['done'].count}
+      - @goals_in_list['done'].each do |goal_in_list|
+        %p
+          = link_to goal_in_list.title, goal_in_list.goal
+
+  - if @goals_in_list['failed']
+    .failed-goals
+      %p Failed count: #{@goals_in_list['failed'].count}
+      - @goals_in_list['failed'].each do |goal_in_list|
+        %p
+          = link_to goal_in_list.title, goal_in_list.goal
 
 .own-goals
   %h2 Created by you
-  - if @goals.empty?
-    = link_to "Make your own goal!", new_goal_path
-  - else
-    %p Total count: #{@goals.count}
-    %ul.own-goals
-    - @goals.each do |goal|
-      %li.own-goal
-        = link_to goal.title, goal
-        - if goal.shared?
-          Shared for everyone!
-        - else
-          = link_to 'Share for everyone!', share_goal_path(goal), method: :put, confirm: true
+
+  = link_to "Make new own goal", new_goal_path
+  %br
+
+  %p Total count: #{@goals.count}
+  %ul.own-goals
+  - @goals.each do |goal|
+    %li.own-goal
+      = link_to goal.title, goal
+      - if goal.shared?
+        Shared for everyone!
+      - else
+        = link_to 'Share for everyone!', share_goal_path(goal), method: :put, confirm: true
