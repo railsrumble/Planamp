@@ -2,20 +2,57 @@
   width: 100%;
   position: absolute;
   background-color: #fff;
-  border-bottom: 1px solid #eee;
+  border-bottom: 2px solid #eee;
   z-index: 20;
 }
 .b-header__name {
   float: left;
-  padding: 20px 0;
+
+  color:#000
+}
+.b-header__name-link {
+  text-decoration:none;
   font-family: @roboto;
   font-size: 24px;
-  height: 24px;
   line-height: 24px;
+  padding: 20px 0 20px 60px;
+  height: 24px;
+  background: url(../img/b-header__name.png) no-repeat 0 45%;
+  float: left;
+  color:#000;
+  &:hover {
+    color:#000;
+    text-decoration:none;
+  }
+
 }
-.b-header__author {
+.b-header__menu {
   float: right;
   height: 24px;
   line-height: 24px;
   padding: 20px 0;
+  &:after {
+    clear: both;
+    display: block;
+    content: "";
+  }
+}
+.b-header__menu-item {
+  padding:0 15px 0 23px;
+  background: 0 50% no-repeat;
+  height: 24px;
+  line-height: 24px;
+  float: left;
+}
+.b-header__menu-item_signout {
+  background-image: url(../img/b-header__menu-item_signout.png)
+}
+.b-header__menu-item_signin {
+  background-image: url(../img/b-header__menu-item_signin.png)
+}
+.b-header__menu-item_makegoal {
+  background-image: url(../img/b-header__menu-item_makegoal.png)
+}
+.b-header__menu-item_yourgoals {
+  background-image: url(../img/b-header__menu-item_yourgoals.png)
 }
