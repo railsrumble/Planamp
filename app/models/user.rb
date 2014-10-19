@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   delegate :goal_in_lists, to: :goal_list
 
   def goal_list
-    super || build_goal_list.save!
+    super || (build_goal_list.save! && goal_list)
   end
 
   def self.from_omniauth(auth)
