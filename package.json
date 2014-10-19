@@ -1,0 +1,17 @@
+{
+  "name": "bem-builder",
+  "version": "1.0.0",
+  "description": "Сборщик проектов",
+  "devDependencies": {
+    "globby": "latest",
+    "gulp": "^3.8.8",
+    "gulp-clean": "latest",
+    "gulp-concat": "latest",
+    "gulp-imagemin": "latest",
+    "gulp-jade": "latest",
+    "gulp-less": "latest",
+    "gulp-notify": "latest",
+    "gulp-uglify": "latest",
+    "watchify": "latest"
+  }
+}
