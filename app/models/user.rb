@@ -14,6 +14,10 @@ class User < ActiveRecord::Base
     super || (build_goal_list.save! && goal_list)
   end
 
+  def grouped_goals_in_list
+    goal_in_lists.group_by{ |goal_in_list| goal_in_list.aasm_state }
+  end
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email || "email-#{SecureRandom.uuid}@example.com"
