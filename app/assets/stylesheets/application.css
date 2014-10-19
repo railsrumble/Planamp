@@ -11,6 +11,25 @@
  * file per style scope.
  *
  *= require_tree .
- *= require main
  *= require_self
  */
+
+.flash-message {
+    color: black;
+    z-index: 999;
+    /*position: fixed;*/
+    font-weight: bold;
+    width: 96%;
+    margin: 20px; }
+.flash-message.alert {
+    border: solid 4px #900;
+    background-color: #FF6565; }
+.flash-message.error {
+    border: solid 4px #900;
+    background-color: #FF6565; }
+.flash-message.notice {
+    border: solid 4px #26722D;
+    background-color: #A4E7A0; }
+.flash-message p {
+    font-size: 110%;
+    margin: 15px 0; }

@@ -1,22 +1,26 @@
 = page_title("Planamp - #{@goal.title}")
 
-%h1.goal-title= @goal.title
-%h3.goal-category= link_to @goal.category_name, @goal.category
-
-%h4.goal-creator Created by #{link_to @goal.user_name, '#'}
+%div{style: "text-align: center;"}
+  %h1.goal-title= @goal.title
+  %div{style: "text-align: left;"}
+    %h3.goal-category= link_to @goal.category_name, @goal.category
+  %div{style: "text-align: right;"}
+    %h4.goal-creator Created by #{link_to @goal.user_name, '#'}
 
 %p.goal-description= @goal.description
 
-= link_to 'Motivations (should be as dialog)', '#', class: 'motivations-dialog-link'
 %br
-.motivations{style: 'display:none'}
-  = render partial: 'motivation', collection: @goal.motivations
 
-= render partial: 'shared/share_buttons'
-
-- if current_user && current_user.goal_list.is_pending?(@goal)
-  Goal already in #{link_to "your goal list", user_goals_url}
-- else
-  = link_to 'Add to own list', add_to_goal_list_path(@goal), method: :put
+%div{style: "text-align: center;"}
+  = link_to 'Motivations (should be as dialog)', '#', class: 'motivations-dialog-link'
+  .motivations{style: 'display:none'}
+    = render partial: 'motivation', collection: @goal.motivations
+  %div{style: "text-align: left;"}
+    = render partial: 'shared/share_buttons'
+  %div{style: "text-align: right;"}
+    - if current_user && current_user.goal_list.is_pending?(@goal)
+      Goal already in #{link_to "your goal list", user_goals_url}
+    - else
+      = link_to 'Add to own list', add_to_goal_list_path(@goal), method: :put
 
 = render partial: 'shared/disqus'

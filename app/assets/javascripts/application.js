@@ -15,3 +15,18 @@
 //= require_tree .
 
 
+$(function() {
+    var flashCallback;
+    flashCallback = function() {
+        return $(".flash-message").fadeOut();
+    };
+    $(".flash-message").bind('click', (function(_this) {
+        return function(ev) {
+            return $(".flash-message").fadeOut();
+        };
+    })(this));
+    return setTimeout(flashCallback, 3000);
+});
+
+
+

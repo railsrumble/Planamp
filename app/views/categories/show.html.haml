@@ -1,7 +1,12 @@
 = body_class(@category_with_goals.name.downcase)
 
-%h3.all-categories= link_to "All categories", categories_path
-%h2.current-category= link_to @category_with_goals.name, '#'
+%div{style: "text-align: center;"}
+  %h2.current-category= link_to @category_with_goals.name, '#'
+  %div{style: "text-align: left;"}
+    %h3.all-categories= link_to "All categories", categories_path
+  - if @category_with_goals == Category.shared
+    %div{style: "text-align: right;"}
+      = link_to "Make your goal and share it!", new_goal_path
 
 %ul.goals
   - @category_with_goals.available_goals.each do |goal|

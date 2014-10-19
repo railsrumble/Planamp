@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   put 'goals_in_list/:id/fail' => 'goals_in_list#fail', as: :fail_goal
 
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
-  root to: 'main#index'
+  root to: 'categories#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
