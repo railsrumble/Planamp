@@ -1,9 +1,9 @@
 = body_class(@category_with_goals.name.downcase)
 %div.b-categories
   %h2.b-categories__title #{@category_with_goals.name} #{link_to "All categories", categories_path, class: 'b-categories__title-link'}
-  -#- if @category_with_goals == Category.shared
-  -#  %div{style: "text-align: right;"}
-  -#    = link_to "Make your goal and share it!", new_goal_path
+  - if @category_with_goals == Category.shared
+    %div{style: "text-align: right; padding-bottom: 25px; margin-top: -15px;"}
+      = link_to "Make your goal and share it!", new_goal_path
 
   %div.b-categories__goals
     - @category_with_goals.available_goals.each do |goal|
