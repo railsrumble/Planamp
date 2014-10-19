@@ -25,9 +25,8 @@
 
     %div.b-footer
       %div.b-wrapper.clearfix
-        = link_to "About", "#", class: 'b-footer__left'
-        = link_to "About", "#", class: 'b-footer__right'
-        © 2014 RailsRumble
+        = link_to "About", about_path, class: 'b-footer__left'
+        %span{class: 'b-footer__right'} © 2014 RailsRumble
         = render partial: 'shared/yandex_metrika'
         = render partial: 'shared/swell'
         = render partial: 'shared/rails_rumble'
