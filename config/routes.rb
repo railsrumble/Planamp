@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :categories, only: [:index, :show]
   resources :user_goals, only: [:index]
-  
+
   resources :goals, only: [:show, :create, :new] do
     member do
       get :random_motivation
