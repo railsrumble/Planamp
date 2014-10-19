@@ -14,6 +14,7 @@
           - if goal_in_list.pending?
             = link_to "Done", done_goal_path(goal_in_list), method: :put
             = link_to "Fail", fail_goal_path(goal_in_list), method: :put
+            = link_to "Motivate me!", '#'
           - else
             = goal_in_list.aasm_state
           %br
