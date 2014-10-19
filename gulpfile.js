@@ -52,10 +52,6 @@ gulp.task('less', function() {
 });
 
 gulp.task('js', function() {
-    gulp.src(source.jquery)
-        .pipe(concat('jquery.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest(build.js))
     gulp.src(source.library)
         .pipe(concat('plugins.js'))
         .pipe(uglify())

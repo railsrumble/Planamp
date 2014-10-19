@@ -15,12 +15,10 @@
   %body{class: "#{content_for?(:body_class) ? content_for(:body_class) : ''}"}
     %div.b-header
       %div.b-wrapper.clearfix
-        %div.b-header__name
-          %h1.main-title= link_to "Planamp - Goal Motivation App"
+        %div.b-header__name= link_to "Planamp - Goal Motivation App", categories_path, class: 'b-header__name-link';
+        %div.b-user= 'Добро пожаловать пользователь 98213';
     %div.b-content
       %div.b-wrapper.clearfix
-
-        %h1.main-title= link_to "Planamp - Goal Motivation App", categories_path
 
         .menu= render partial: 'shared/menu'
 
