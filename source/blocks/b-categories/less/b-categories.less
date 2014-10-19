@@ -1,5 +1,5 @@
 .b-categories {
-  padding-bottom: 50px;
+  margin-bottom: 50px;
   &:after {
     clear: both;
     display: block;
@@ -50,8 +50,16 @@
   float:right;
   font-size: 16px;
 }
+span.b-categories__title-link {
+  color: #888;
+  b{
+    color:#000;
+    font-weight: 500;
+  }
+}
 .b-categories__goals {
   border-top: 1px solid #eee;
+  margin-bottom: 50px;
   &:after {
     clear: both;
     display: block;
@@ -68,12 +76,66 @@
   &:hover {
     background-color: #f5f5f5;
   }
+  &:after {
+    clear: both;
+    display: block;
+    content: "";
+  }
+}
+.b-categories__goals-item-btn {
+  float:right;
+  padding: 0 10px;
+}
+.b-categories__goals-item_your {
+  border: 1px solid #eee;
+  border-top: none;
+  display: block;
+  padding: 0px 0px 0px 42px;
+  text-decoration: none;
+  background: url(../img/b-categories__goals-item.png) 4px 3px no-repeat;
+  .b-categories__goals-item-title {
+    float:left;
+    width:550px;
+  }
+}
+.b-categories__goals-item-btn {
+  float:right;
+  padding: 10px;
+  color:#fff;
+  text-decoration:none;
+  font-family: @roboto;
+  &:hover {
+    color:#fff;
+  }
+}
+.b-categories__goals-item-btn_info {
+  background-color: #5bc0de;
+  &:hover {
+    background-color: #31b0d5;
+  }
+}
+.b-categories__goals-item-btn_fail {
+  background-color: #d9534f;
+  &:hover {
+    background-color: #c9302c;
+  }
+}
+.b-categories__goals-item-btn_done {
+  background-color: #5cb85c;
+  &:hover {
+    background-color: #449d44;
+  }
 }
 .b-categories__goals-item-title {
   display:block;
   color:#000;
   font-size: 16px;
   font-family:@roboto;
+  text-decoration:none;
+  padding: 10px 0;
+  &:hover {
+    color:#000;
+  }
 }
 .b-categories__goals-item-desc {
   display:block;
