@@ -339,13 +339,13 @@ h6 {
 }
 .b-content {
   position: relative;
-  min-height: 400px;
   padding-top: 80px;
 }
 .b-content .b-wrapper {
   background: #fff;
   -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  min-height: 400px;
   padding: 33.33333333px 40px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -353,8 +353,8 @@ h6 {
 }
 .b-footer {
   position: relative;
-  min-height: 40px;
   padding-bottom: 60px;
+  padding-top: 15px;
 }
 .b-footer .b-wrapper {
   background: #fff;
