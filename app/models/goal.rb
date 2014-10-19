@@ -1,7 +1,10 @@
 class Goal < ActiveRecord::Base
   belongs_to :category
   belongs_to :user
+
   has_many :motivations
+  has_many :goal_in_lists
+  has_many :goal_lists, through: :goal_in_lists
 
   accepts_nested_attributes_for :motivations
 
@@ -9,6 +12,8 @@ class Goal < ActiveRecord::Base
   delegate :name, to: :user, prefix: true
 
   scope :available_for_all, -> { where(shared: true).where(approved: true) }
+
+  after_create :add_to_user_goal_list
 
   delegate :name, to: :category, prefix: true
   delegate :name, to: :user, prefix: true
@@ -21,5 +26,13 @@ class Goal < ActiveRecord::Base
 
   def share!
     update_attribute(:shared, true)
+  end
+
+
+  protected
+
+
+  def add_to_user_goal_list
+    user.goal_list.add_goal(self) unless user.admin?
   end
 end
