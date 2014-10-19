@@ -13,6 +13,8 @@ class Goal < ActiveRecord::Base
 
   scope :available_for_all, -> { where(shared: true).where(approved: true) }
 
+  after_create :add_to_user_goal_list
+
   delegate :name, to: :category, prefix: true
   delegate :name, to: :user, prefix: true
 
@@ -24,5 +26,13 @@ class Goal < ActiveRecord::Base
 
   def share!
     update_attribute(:shared, true)
+  end
+
+
+  protected
+
+
+  def add_to_user_goal_list
+    user.goal_list.add_goal(self) unless user.admin?
   end
 end

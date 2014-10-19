@@ -18,3 +18,5 @@
   Goal already in #{link_to "your goal list", user_goals_url}
 - else
   = link_to 'Add to own list', add_to_goal_list_path(@goal), method: :put
+
+= render partial: 'shared/disqus'
