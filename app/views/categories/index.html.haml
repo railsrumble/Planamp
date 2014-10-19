@@ -1,7 +1,7 @@
 %ul.categories
   - @categories.each do |category|
     %li
-      =link_to "#{category.name} <span>#{category.goals_count}</span>".html_safe, category
+      =link_to "#{category.name}".html_safe, category
       %span.count= category.goals_count
   %li
     = link_to @shared_category.name, @shared_category
