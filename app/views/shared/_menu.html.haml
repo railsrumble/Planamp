@@ -1,15 +1,18 @@
+
+
+-#- if current_user && current_user.admin?
+-#  = link_to "New goal", new_goal_path, class: 'b-header__menu-item b-header__menu-item_newgoal'
+-#- else
+
+= link_to "Make your own goal", new_goal_path, class: 'b-header__menu-item b-header__menu-item_makegoal'
+= link_to "Your goals", user_goals_path, class: 'b-header__menu-item b-header__menu-item_yourgoals'
+
+-#= link_to "Categories", categories_path
+
+
 - if current_user
-  = link_to "Sign out", destroy_user_session_path, method: :delete
+  = link_to "Sign out", destroy_user_session_path, method: :delete, class: 'b-header__menu-item b-header__menu-item_signout'
 - else
-  = link_to "Sign in", new_user_session_path
-  = link_to "Sign in with Github", user_omniauth_authorize_path(:github, origin: request.original_url)
-  = link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter, origin: request.original_url)
-
-- if current_user && current_user.admin?
-  = link_to "New goal", new_goal_path
-- else
-  = link_to "Make your own goal", new_goal_path
-  = link_to "Your goals", user_goals_path
-
-= link_to "Categories", categories_path
-
+  = link_to "Sign in", new_user_session_path, class: 'b-header__menu-item b-header__menu-item_signin'
+  -#= link_to "Sign in with Github", user_omniauth_authorize_path(:github, origin: request.original_url)
+  -#= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter, origin: request.original_url)
