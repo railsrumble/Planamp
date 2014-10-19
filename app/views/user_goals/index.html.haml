@@ -5,6 +5,9 @@
   - if @goals_in_list.empty?
     = link_to "Select goals!", categories_path
   -else
+    %p Pending count: #{@goals_in_list.pending.count}
+    %p Done count: #{@goals_in_list.done.count}
+    %p Failed count: #{@goals_in_list.failed.count}
     %ul.goal-list
       - @goals_in_list.each do |goal_in_list|
         %li
@@ -22,6 +25,7 @@
   - if @goals.empty?
     = link_to "Make your own goal!", new_goal_path
   - else
+    %p Total count: #{@goals.count}
     %ul.own-goals
     - @goals.each do |goal|
       %li.own-goal
