@@ -60,6 +60,7 @@
           var motivationHtml = "<a class='b-close'>x<a/>";
           motivationHtml += "<strong>" + result.title + "</strong>";
           motivationHtml += "<p>" + result.description + "</p>";
+          motivationHtml += "<strong>Source: </strong>" + result.source;
           $('.popup-motivation').html(motivationHtml);
           $('.popup-motivation').bPopup();
        }
