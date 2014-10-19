@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :goals, only: [:show, :create, :new] do
     member do
       get :random_motivation
+      put :disable
     end
   end
 
