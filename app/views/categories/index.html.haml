@@ -1,5 +1,5 @@
 %div.b-categories
-  %h2.b-categories__title Сategory
+  %h2.b-categories__title Go into the section you are interested in and choice the <b>goal</b>
   - @categories.each do |category|
     =link_to "#{category.name} <span>#{category.goals_count}</span>".html_safe, category, class: 'b-categories__item b-categories__item_' + category.name.downcase
   = link_to "#{@shared_category.name} <span>#{@shared_category.goals_count}</span>".html_safe, @shared_category, class: 'b-categories__item b-categories__item_shared'
