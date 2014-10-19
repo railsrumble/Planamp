@@ -202,10 +202,27 @@ h6 {
   display: block;
   color: #999;
 }
+.b-categories__creator {
+  padding-bottom: 10px;
+  padding-top: 12px;
+  font-size: 12px;
+  text-align: right;
+}
+.b-categories__social {
+  float: right;
+}
+.b-categories__add-own-list {
+  height: 32px;
+  line-height: 32px;
+  display: inline-block;
+  padding-left: 40px;
+  background: url(../img/b-categories__add-own-list.png) 0 50% no-repeat;
+}
 .b-content {
   position: relative;
   min-height: 400px;
   padding-top: 80px;
+  padding-bottom: 60px;
 }
 .b-content .b-wrapper {
   background: #fff;
