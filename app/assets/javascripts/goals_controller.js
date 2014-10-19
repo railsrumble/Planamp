@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $("a.motivations-dialog-link").click(function () {
-        $(".motivations").toggle();
+    $(".b-categories__motivations-link").click(function () {
+        $(".b-categories__motivations").toggle();
     })
 })

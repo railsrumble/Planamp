@@ -4,12 +4,12 @@
 
 %p.goal-description= @goal.description
 
-
-= link_to 'Motivations (should be as dialog)', '#', class: 'motivations-dialog-link'
-.motivations{style: 'display:none'}
+%div.b-categories__creator Created by #{link_to @goal.user_name, '#'}
+= link_to 'Motivations (should be as dialog)', '#', class: 'b-categories__motivations-link'
+.b-categories__motivations{style: 'display:none'}
   = render partial: 'motivation', collection: @goal.motivations
 
-%div.b-categories__creator Created by #{link_to @goal.user_name, '#'}
+
 %div.b-categories__social
   = render partial: 'shared/share_buttons'
 %div.b-categories__add-own-list

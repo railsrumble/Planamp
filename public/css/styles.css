@@ -207,6 +207,7 @@ h6 {
   padding-top: 12px;
   font-size: 12px;
   text-align: right;
+  display: none;
 }
 .b-categories__social {
   float: right;
@@ -214,9 +215,35 @@ h6 {
 .b-categories__add-own-list {
   height: 32px;
   line-height: 32px;
-  display: inline-block;
+  float: left;
   padding-left: 40px;
   background: url(../img/b-categories__add-own-list.png) 0 50% no-repeat;
+}
+.b-categories__motivations-link {
+  height: 32px;
+  line-height: 32px;
+  display: block;
+  padding-left: 40px;
+  margin-bottom: 10px;
+  background: url(../img/b-categories__motivation.png) 0 50% no-repeat;
+}
+.b-categories__motivations {
+  padding: 10px 0;
+}
+.b-categories__motivations-item {
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #999;
+  margin-bottom: 15px;
+}
+.b-categories__motivations-item-title {
+  font-size: 18.2px;
+  font-weight: normal;
+  height: 18.2px;
+  line-height: 18.2px;
+  padding-bottom: 5px;
+}
+.b-categories__motivations-item-description {
+  padding-bottom: 5px;
 }
 .b-content {
   position: relative;

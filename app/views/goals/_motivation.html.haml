@@ -1,7 +1,7 @@
-.motivation
-  %h5.motivation-title= motivation.title
-  %p.motivation-description= motivation.description
-  %p.motivation-source
+.b-categories__motivations-item
+  %div.b-categories__motivations-item-title= motivation.title
+  %div.b-categories__motivations-item-description= motivation.description
+  %div.b-categories__motivations-item-source
     <b>Source:</b>
     - if motivation.source_is_url?
       #{link_to motivation.source, motivation.source}
