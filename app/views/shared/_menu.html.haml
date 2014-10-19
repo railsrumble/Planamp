@@ -6,6 +6,6 @@
   = link_to "Sign out", destroy_user_session_path, method: :delete, class: 'b-header__menu-item b-header__menu-item_signout'
 - else
   -# link_to "Sign in", new_user_session_path, class: 'b-header__menu-item b-header__menu-item_signin'
-  %span.b-header__menu-item_signin Sing in with
+  %span.b-header__menu-item_signin Sign in with
   = link_to "", user_omniauth_authorize_path(:github, origin: request.original_url), class: 'b-header__menu-item_github'
   = link_to "", user_omniauth_authorize_path(:twitter, origin: request.original_url), class: 'b-header__menu-item_twitter'
