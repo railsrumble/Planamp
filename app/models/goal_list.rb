@@ -21,7 +21,7 @@ class GoalList < ActiveRecord::Base
   end
 
   def is_pending?(goal)
-    goal_in_list = goal_in_lists.where(goal_id: goal.id).first
-    goal_in_list && goal_in_list.pending?
+    goal_in_list = goal_in_lists.where(goal_id: goal.id, aasm_state: 'pending').first
+    goal_in_list
   end
 end
