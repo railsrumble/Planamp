@@ -1,6 +1,7 @@
 %div.b-categories
   %h2.b-categories__title Your goal list
-  %div.b-categories__goals-counter.b-categories__goals-counter_first Pending count: <span class="b-categories__goals-counter-pen">#{@goals_in_list['pending'].count}</span>
+  - if @goals_in_list['pending']
+    %div.b-categories__goals-counter.b-categories__goals-counter_first Pending count: <span class="b-categories__goals-counter-pen">#{@goals_in_list['pending'].count}</span>
   .b-categories__goals
     -#= link_to "View new goals", categories_path
     - if @goals_in_list['pending']
