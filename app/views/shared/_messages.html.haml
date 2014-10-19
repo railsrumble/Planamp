@@ -1,3 +1,4 @@
 - flash.each do |name, msg|
   - if msg.is_a?(String)
-    %div{class: "flash_#{name}"} #{msg}
+    %div{class: "flash-message #{name}"}
+      %p #{msg}

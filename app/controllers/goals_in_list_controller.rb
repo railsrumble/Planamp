@@ -1,4 +1,6 @@
 class GoalsInListController < ApplicationController
+  before_action :authenticate_user!
+
   def done
     goal_in_list = GoalInList.find(params[:id])
     goal_in_list.achieve_dream!
