@@ -33,6 +33,11 @@ class GoalsController < ApplicationController
     @goal = Goal.find(params[:id])
   end
 
+  def random_motivation
+    @goal = Goal.find(params[:id])
+    render json: @goal.motivations.sample
+  end
+
 
   protected
 

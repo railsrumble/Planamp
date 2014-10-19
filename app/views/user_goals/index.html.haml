@@ -7,7 +7,8 @@
       - @goals_in_list['pending'].each do |goal_in_list|
         %div.b-categories__goals-item.b-categories__goals-item_your
           = link_to goal_in_list.title, goal_in_list.goal, class: 'b-categories__goals-item-title'
-          = link_to "Motivate me!", '#', class: 'b-categories__goals-item-btn b-categories__goals-item-btn_info';
+          = link_to "Motivate me!", '#', class: 'b-categories__goals-item-btn b-categories__goals-item-btn_info', |
+          data: {id: goal_in_list.goal.id};
           = link_to "Fail", fail_goal_path(goal_in_list), method: :put, class: 'b-categories__goals-item-btn b-categories__goals-item-btn_fail';
           = link_to "Done", done_goal_path(goal_in_list), method: :put, class: 'b-categories__goals-item-btn b-categories__goals-item-btn_done';
 
@@ -35,3 +36,26 @@
           %div.b-categories__goals-item-desc Shared for everyone!
         - else
           = link_to 'Share for everyone!', share_goal_path(goal), method: :put, confirm: true
+
+  .popup-motivation{style: 'display:none'}
+    %a{class: "b-close"}X
+
+:javascript
+  $(function() {
+    $('.b-categories__goals-item-btn.b-categories__goals-item-btn_info').click(function () {
+      var goalId = $(this).data()['id'];
+      var url = '/goals/' + goalId + '/random_motivation'
+      $.ajax({
+        dataType: "json",
+        url: url,
+        async: false,
+        success: function(result){
+          var motivationHtml = "<a class='b-close'>x<a/>";
+          motivationHtml += "<strong>" + result.title + "</strong>";
+          motivationHtml += "<p>" + result.description + "</p>";
+          $('.popup-motivation').html(motivationHtml);
+          $('.popup-motivation').bPopup();
+       }
+      });
+    })
+  })
