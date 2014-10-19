@@ -23,7 +23,6 @@ class GoalsController < ApplicationController
     end
 
     if @goal.save
-      current_user.goal_list.add_goal(@goal)
       redirect_to @goal, success: "Goal successfully created!"
     else
       render 'new'
