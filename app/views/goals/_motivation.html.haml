@@ -1,4 +1,9 @@
 .motivation
   %h5.motivation-title= motivation.title
   %p.motivation-description= motivation.description
-  %p.motivation-source <b>Source</b> #{motivation.source}
+  %p.motivation-source
+    <b>Source:</b>
+    - if motivation.source_is_url?
+      #{link_to motivation.source, motivation.source}
+    - else
+      #{link_to motivation.source, '#'}

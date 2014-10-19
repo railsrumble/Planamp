@@ -20,4 +20,8 @@ class GoalInList < ActiveRecord::Base
     end
   end
 
+  scope :pending, -> {where(aasm_state: 'pending')}
+  scope :done, -> {where(aasm_state: 'done')}
+  scope :failed, -> {where(aasm_state: 'failed')}
+
 end
