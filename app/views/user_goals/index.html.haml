@@ -33,7 +33,8 @@
   %h2.b-categories__title Created by you
   %div.b-categories__goals-counter.b-categories__goals-counter_first Total count:  <span class="b-categories__goals-counter-pen">#{@goals.count}</span>
   - if @goals.empty?
-    %div.b-categories__goals
+    = link_to "Make your own goal", new_goal_path
+  %div.b-categories__goals
     - @goals.each do |goal|
       %div.b-categories__goals-item
         = link_to goal.title, goal, class: 'b-categories__goals-item-title'
