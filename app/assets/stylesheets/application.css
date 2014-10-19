@@ -18,9 +18,10 @@
     color: black;
     z-index: 999;
     /*position: fixed;*/
-    font-weight: bold;
     width: 96%;
-    padding:0 20px; }
+    padding:0 20px;
+    margin-bottom: 30px;
+}
 .flash-message.alert {
     border: solid 1px #c9302c;
     background-color: #d9534f; }
