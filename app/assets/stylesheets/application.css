@@ -20,16 +20,16 @@
     /*position: fixed;*/
     font-weight: bold;
     width: 96%;
-    margin: 20px; }
+    padding:0 20px; }
 .flash-message.alert {
-    border: solid 4px #900;
-    background-color: #FF6565; }
+    border: solid 1px #c9302c;
+    background-color: #d9534f; }
 .flash-message.error {
-    border: solid 4px #900;
-    background-color: #FF6565; }
+    border: solid 1px #c9302c;
+    background-color: #d9534f; }
 .flash-message.notice {
-    border: solid 4px #26722D;
-    background-color: #A4E7A0; }
+    border: solid 1px #449d44;
+    background-color: #5cb85c; }
 .flash-message p {
     font-size: 110%;
     margin: 15px 0; }
