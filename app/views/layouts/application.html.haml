@@ -23,7 +23,11 @@
         = render partial: 'shared/messages'
         = yield
 
+    %div.b-footer
+      %div.b-wrapper.clearfix
+        = link_to "About", "#", class: 'b-footer__left'
+        = link_to "About", "#", class: 'b-footer__right'
+        @ 2014 RailsRumble
         = render partial: 'shared/yandex_metrika'
         = render partial: 'shared/swell'
         = render partial: 'shared/rails_rumble'
-
