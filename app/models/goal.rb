@@ -28,6 +28,10 @@ class Goal < ActiveRecord::Base
     update_attribute(:shared, true)
   end
 
+  def disapprove!
+    update_attribute(:approved, false)
+  end
+
 
   protected
 

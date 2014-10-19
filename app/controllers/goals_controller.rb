@@ -38,6 +38,12 @@ class GoalsController < ApplicationController
     render json: @goal.motivations.sample
   end
 
+  def disable
+    @goal = Goal.find(params[:id])
+    @goal.disapprove!
+    redirect_to :back, notice: 'Tried to disapprove'
+  end
+
 
   protected
 
