@@ -6,7 +6,8 @@ class GoalList < ActiveRecord::Base
   validates :user, presence: true
 
   def add_goal(goal)
-    exist_pending_goal = goal_in_lists.where(goal_id: goal.id, aasm_state: :pending).first
+    exist_pending_goal = goal_in_lists
+      .where(goal_id: goal.id, aasm_state: :pending).first
     goal_shared_and_approved = goal.shared? && goal.approved?
     goal_owner = (goal.user == user)
 
@@ -21,7 +22,8 @@ class GoalList < ActiveRecord::Base
   end
 
   def is_pending?(goal)
-    goal_in_list = goal_in_lists.where(goal_id: goal.id, aasm_state: 'pending').first
+    goal_in_list = goal_in_lists.where(goal_id: goal.id, aasm_state: 'pending')
+      .first
     goal_in_list
   end
 end

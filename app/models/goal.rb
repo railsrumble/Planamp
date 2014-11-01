@@ -20,7 +20,8 @@ class Goal < ActiveRecord::Base
 
 
   def motivations_attributes=(attrs)
-    not_empty_attrs = Hash[attrs.find_all{|k,v| (v[:source] + v[:title]).present?}]
+    source_or_title = attrs.find_all{|k,v| (v[:source] + v[:title]).present?}
+    not_empty_attrs = Hash[source_or_title]
     super(not_empty_attrs)
   end
 
