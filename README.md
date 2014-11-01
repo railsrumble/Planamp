@@ -2,6 +2,9 @@
 
 This app we did in RailsRumble 2014 hackathon.
 
+http://planamp.r14.railsrumble.com/
+
+
 ## TODO
 
 1. Make BEM assets precompile from source/ folder.
